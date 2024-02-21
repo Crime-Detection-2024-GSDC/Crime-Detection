@@ -36,7 +36,7 @@ Dong Ha KANG|Chan Won KIM|Yun Ho BAE|Tak Hyun LEE|
 ## 🔨 How to Use
 
 ```bash
-# 프로젝트 다운로드
+# Project Download
 git clone https://github.com/Kongtaks/SolutionChallenge_SEtour
 
 pip install -r requirements.txt
