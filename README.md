@@ -29,7 +29,7 @@ Dong Ha KANG|Chan Won KIM|Yun Ho BAE|Tak Hyun LEE|
     * Implementing features for hazardous area data collection
     * Modeling learning through features
 * Function
-    * Shooting a short video with a camera (CCTV agency)
+    * Shooting a short video with a camera
     * Identify and learn risky behaviors from short videos
     * Video management possible in administrator mode
 
