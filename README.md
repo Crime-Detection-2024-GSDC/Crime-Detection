@@ -1,4 +1,4 @@
-# 👬 Crime Detection (crime Data extraction and modeling for violent areas)
+# 👬 Crime Detection (crime Data extraction and modeling)
 
 ## Introduction
 
