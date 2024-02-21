@@ -38,7 +38,7 @@ Dong Ha KANG|Chan Won KIM|Yun Ho BAE|Tak Hyun LEE|
 
 ```bash
 # Project Download
-git clone https://github.com/Kongtaks/SolutionChallenge_SEtour
+git clone https://github.com/Crime-Detection-2024-GSDC/Crime-Detection
 
 pip install -r requirements.txt
 daphne -b 0.0.0.0 -p 8000 SCD_Backend.asgi:application
