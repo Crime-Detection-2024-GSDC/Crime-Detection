@@ -2,7 +2,7 @@
 
 ## Introduction
 
-### 🌟 Team CDtour
+### 🌟 Team - Crime Detection
 
 
 
@@ -14,7 +14,7 @@ Dong Ha KANG|Chan Won KIM|Yun Ho BAE|Tak Hyun LEE|
  
 #### 🔅 Contribution  
 
-- [`Dong-ha KANG`] &nbsp; Django, Back API Server, DB test
+- [`Dong ha KANG`] &nbsp; Django, Back API Server, DB test
 - [`Chan Won KIM`] &nbsp; Model Research, ML/DL
 - [`Yun Ho BAE`]&nbsp; Model Research,  ML/DL
 - [`Tak Hyun LEE`] &nbsp; JS, Front Web, UI
