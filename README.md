@@ -8,7 +8,7 @@
 
 #### 🔅 Members  
 
-Dong Ha KANG||Chan Won KIM|Yun Ho BAE|Tak Hyun LEE|
+Dong Ha KANG|Chan Won KIM|Yun Ho BAE|Tak Hyun LEE|
 :-:|:-:|:-:|:-:
 [Github](https://github.com/EasternPen9uin)|[Github](https://github.com/chanwon0)|[Github](https://github.com/uyunho99)|[Github](https://github.com/Kongtaks)
  
