@@ -346,7 +346,7 @@ SAFETY_SETTINGS = [{"category" : i,"threshold" : "BLOCK_NONE"} for i in [("HARM_
 PROMPT_MESSAGE :str = "이 동영상의 프레임들을 미루어 보아, 지금 어떤 일이 일어나고 있습니까? 짧게 말해주십시오."
 
 # (디버깅용) 추론 API 디버그 여부 (True면 영상이 항상 폭력적이라고 판단하게 됨)
-DEBUG_INFER = True
+DEBUG_INFER = False
 
 ##### 전역 변수
 # 모델 로드
@@ -820,8 +820,7 @@ def playTTS(prompt :str) :
     soundObj = gTTS(prompt, lang='ko')
     # 소리 출력용 가짜 파일 포인터
     b = BytesIO()
-    soundObj.write_to_fp(b) #mp3파일 형식임
-    
+    soundObj.write_to_fp(b) #mp3파일 형식임    
     # https://stackoverflow.com/questions/51164040/gtts-direct-output 참고
     mixer.init()
     b.seek(0)
