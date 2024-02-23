@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ImageSearch</title>
+	<link rel="stylesheet" type="text/css" href="src/common/common_style.css">
+	<style>
+		label {
+			display:inline-block;
+			line-height : 1em;
+			width : 45%;
+			margin-right : 0.3em;
+		}
+		.checkbox {
+			float:left;
+		}
+		.searchElement:hover {
+			text-decoration : underline;
+			transition: all 0.6s;
+		}
+		#userlist {
+			width : 20em;
+			height : 8em;
+			overflow:scroll;
+			overflow-x: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="whitebox" id="imageViewWhiteBox">
+		<div class="contentscontainer">
+    		<table class="resultTable">
+			<tr>
+			    <td>유저 목록</td>
+			    <td>
+					<input type="button" name="color" value="전체 선택/해제" id="CheckAll" class="button2">
+					<div id="userlist">
+    		        </div>
+					<br>
+			    </td>
+			</tr>
+			<tr>
+			    <td>날짜</td>
+			    <td><input type="date" id="selectDate" class="variousInput"></td>
+			</tr>
+			<tr>
+			    <td>시간</td>
+			    <td>
+			        <input type="time" id="selectTime0" step="1" class="variousInput"> ~ <input type="time" id="selectTime1" step="1" class="variousInput">
+			    </td>
+			</tr>
+			<tr>
+			    <td>표시 갯수</td>
+			    <td>
+			        <select name="view_counts" id="viewCounts" class="selection2">
+						<option value='10'>10개씩 보기</option>
+						<option value='20'>20개씩 보기</option>
+    		            <option value='40'>40개씩 보기</option>
+    		            <option value='80'>80개씩 보기</option>
+			        </select>
+			    </td>
+			</tr>
+			<tr>
+			    <td>비폭력영상도 포함</td>
+			    <td><input type="checkbox" id="includeNonViolent" class="variousInput"></td>
+			</tr>
+    		</table>
+			<p>
+    		    <input type="button" value="검색" id="search" class="button2"/>
+    		</p>
+			<table class="resultTable">
+    		    <thead>
+    		        <tr>
+    		            <th>id</th>
+    		            <th>username</th>
+    		            <th>시간</th>
+    		            <th>카트 수</th>
+    		        </tr>
+    		    </thead>
+    		    <tbody id="searchTable">
+    		    </tbody>
+    		</table>
+			<p id="indexes">
+    		    <input type="button" value="이전" id="prevBtn" class="button2"/>
+    		    <span id="indexNumber"></span>
+    		    <input type="button" value="다음" id="nextBtn" class="button2"/>
+    		</p>
+			<br>
+			<input type="button" class="button2" value="뒤로 가기" onclick="history.back()"/>
+			<br><br>
+		</div>
+	</div>
+    <script type="module" src="src/video_search.js"></script>
+</body>
+</html>

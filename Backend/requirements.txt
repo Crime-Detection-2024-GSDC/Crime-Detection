@@ -1,0 +1,17 @@
+django
+django-cors-headers
+django-compat
+djangorestframework
+django-apscheduler
+channels
+argon2-cffi
+opencv-python
+daphne
+torch
+torchvision
+torchaudio
+pyopenssl
+google-generativeai
+gtts
+pygame
+ffmpeg-python

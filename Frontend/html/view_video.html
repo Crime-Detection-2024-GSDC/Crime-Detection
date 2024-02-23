@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=0.5"/>
+<head>
+    <title>ViewImage</title>
+    <link rel="stylesheet" type="text/css" href="src/common/common_style.css">
+</head>
+<body>
+    <div class="whitebox" id="imageViewWhiteBox">
+    <div class="contentscontainer">
+    <video id="viewVideo" autoplay="true" controls></video>
+    <br>
+    <div>
+        <input type="button" class="button" value="이전" id="prev">
+        <input type="button" class="button" value="다음" id="next"><br>
+    </div>
+    <table class="resultTable">
+        <tr>
+            <td>사진 ID</td>
+            <td><span id="pkText">Loading... </span></td>
+        </tr>
+        <tr>
+            <td>날짜 및 시간</td>
+            <td><span id="dateTime">Loading... </span></td>
+        </tr>
+        <tr>
+            <td>사용자</td>
+            <td><span id="username">Loading... </span>
+        </tr>
+        <tr>
+            <td>폭력성 여부</td>
+            <td><span id="isViolentField">Loading... </span>대</td>
+        </tr>
+        <!-- 다음 주에 쓸 부분이니 지우기 ㄴㄴ
+        <tr>
+            <td>검출 목록</td>
+            <td><label><input type="checkbox" name="color" value="blue"> 전체 보이기</label><br>
+                <label><input type="checkbox" name="color" value="red"> [0] 81%, (0.13, 0.56, 0.78, 0.99)</label><br>
+                <label><input type="checkbox" name="color" value="red"> [1] 72%, (0.13, 0.56, 0.78, 0.99)</label><br>
+                </td>
+        </tr>
+        -->
+    </table>
+    <div>
+        <input type="button" class="button" value="영상 삭제" id="deleteBtn">
+    </div>
+    </div>
+    </div>
+    <script type="module" src="src/view_video.js"></script>
+</body>
+</html>

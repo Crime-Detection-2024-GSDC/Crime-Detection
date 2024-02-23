@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="src/common/common_style.css">
+  	<title>Send Video</title>
+</head>
+<body>
+	<!-- 웹캠으로부터 들어오는 정보를 실시간으로 저장할 video(숨겨짐) -->
+    <div class="whitebox">
+        <div class="contentscontainer">
+            카메라 선택 : <br>
+            <select class="selection" id="camlist"><select></select><br>
+            <video autoplay="true" id="user-video"></video><br>
+            전체화면 : 위 화면 클릭
+        </div>
+    </div>
+    <script type="module" src="src/send_video.js"></script>
+</body>
+</html>
