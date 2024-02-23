@@ -58,9 +58,9 @@ An SSL certificate is required for HTTPS connection (as the navigator.mediaDevic
 1. Install OpenSSL.
 ```Link: https://www.openssl.org/source/```
 2. After installation, enter the following commands in sequence:
-```openssl genrsa -out privKey.pem 1024```
-```openssl req -new -key privKey.pem -out private-csr.pem```
-```openssl x509 -req -days 730 -in private-csr.pem -signKey privKey.pem -out cert.pem```
+```openssl genrsa -out privKey.pem 1024```  
+```openssl req -new -key privKey.pem -out private-csr.pem```  
+```openssl x509 -req -days 730 -in private-csr.pem -signKey privKey.pem -out cert.pem```  
 3. Place the resulting cert.pem and privKey.pem files into the "cert" folder inside the "Frontend" folder.
 4. After completing the above steps, overwrite the contents of the "Frontend" folder in the directory where nginx is installed.
  
