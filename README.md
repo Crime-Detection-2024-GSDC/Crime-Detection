@@ -34,13 +34,13 @@
 ## Server Requirements
 1. It is recommended to operate on a PC with a graphics card that supports CUDA operations. (Operation is possible with CPU, but speed issues may arise.)
 2. The code logic involves video encoding using ffmpeg (using the ffmpeg-python library). Therefore, please install ffmpeg in advance.  
-```Link: https://ffmpeg.org/download.html```
+[Link] (https://ffmpeg.org/download.html)
 3. The code logic requires an API key from Google Gemini. Please follow the instructions below after obtaining the API key from the link provided. (Take care not to leak the API key.)  
-```Link: https://aistudio.google.com/app/prompts/new_chat?hl=ko```
+[Link] (https://aistudio.google.com/app/prompts/new_chat?hl=ko)
 4. Python version 3.9 or higher is required.
 5. ANSI escape codes are used. However, the Windows Command Prompt (cmd.exe) does not support ANSI escape codes properly without registry modifications. If using Windows, please consider using PowerShell or modify the relevant registry values (VirtualTerminalLevel).
 6. This frontend server uses nginx. Please install nginx.  
-```Link: https://www.nginx.com/resources/wiki/start/topics/tutorials/install/```
+[Link] (https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)
 
 
 ## 🔨 How to Use
@@ -56,7 +56,7 @@
 ### Initial Setup (Frontend) 
 An SSL certificate is required for HTTPS connection (as the navigator.mediaDevices function demands HTTPS). However, the actual process of obtaining a certificate can be complex, so it is not detailed here. Below is a method of issuing a self-signed certificate using OpenSSL.
 1. Install OpenSSL.  
-```Link: https://www.openssl.org/source/```
+[Link] (https://www.openssl.org/source/)
 2. After installation, enter the following commands in sequence:  
 ```openssl genrsa -out privKey.pem 1024```  
 ```openssl req -new -key privKey.pem -out private-csr.pem```  
