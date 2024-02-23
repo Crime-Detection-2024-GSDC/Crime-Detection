@@ -57,7 +57,7 @@
 An SSL certificate is required for HTTPS connection (as the navigator.mediaDevices function demands HTTPS). However, the actual process of obtaining a certificate can be complex, so it is not detailed here. Below is a method of issuing a self-signed certificate using OpenSSL.
 1. Install OpenSSL.
 ```Link: https://www.openssl.org/source/```
-2. After installation, enter the following commands in sequence:
+2. After installation, enter the following commands in sequence:  
 ```openssl genrsa -out privKey.pem 1024```  
 ```openssl req -new -key privKey.pem -out private-csr.pem```  
 ```openssl x509 -req -days 730 -in private-csr.pem -signKey privKey.pem -out cert.pem```  
