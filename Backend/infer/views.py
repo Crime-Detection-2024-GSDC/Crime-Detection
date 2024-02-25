@@ -9,7 +9,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 import torch
-from SCD_Backend.settings import MEDIA_URL # 프론트엔드랑 공유할 이미지 파일 경로
+from SCD_Backend.settings import MEDIA_URL
 from custom_util.custom_utils import CustomResponse, link
 from rest_framework.decorators import api_view
 from infer.models import VideoData
@@ -343,14 +343,14 @@ GENERATION_CONFIG = {
 SAFETY_SETTINGS = [{"category" : i,"threshold" : "BLOCK_NONE"} for i in [("HARM_CATEGORY_%s" % cat) for cat in ["HARASSMENT", "HATE_SPEECH", "SEXUALLY_EXPLICIT", "DANGEROUS_CONTENT"]]]
 
 # 프롬프트에 넣을 질문
-PROMPT_MESSAGE :str = "이 동영상의 프레임들을 미루어 보아, 지금 어떤 일이 일어나고 있습니까? 짧게 말해주십시오."
+PROMPT_MESSAGE :str = "Based on the frames of this video, what is currently happening? Please summarize them briefly."
 
 # (디버깅용) 추론 API 디버그 여부 (True면 영상이 항상 폭력적이라고 판단하게 됨)
 DEBUG_INFER = False
 
 ##### 전역 변수
 # 모델 로드
-print("## 모델 로딩")
+print("## Model loading")
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = FusionModel().to(device)
 model.load_state_dict(torch.load(MODEL_PATH))
@@ -360,7 +360,7 @@ model.eval()
 useGemini = USE_GEMINI
 
 # genai configure
-print("## Gemini 설정중")
+print("## Configuring Gemini")
 # API키 입력
 if useGemini:
     try:
@@ -368,7 +368,7 @@ if useGemini:
             API_KEY :str = f.readline()
             genai.configure(api_key=API_KEY)
     except:
-        print("오류 : Gemini 설정에서 오류가 발생했습니다. 따라서 Gemini를 사용하지 않습니다.")
+        print("Error: An error occurred in the Gemini settings. Therefore, Gemini is not being used.")
         useGemini = False
 
 ##### REST API 정의
@@ -766,8 +766,8 @@ def inferVideoByModel(pk:int, filePath:str):
     # 영상이 폭력적이라고 판단되었을 때 실행할 뭐시기
     if isViolent:
         user:User = videoData.user
-        print(f"유저 <{user.username}>이가 보낸 영상이 폭력적이라고 판단됩니다.")
-        print("링크(Ctrl+왼쪽클릭) : " + link(serveFilePath))
+        print(f"Video sent by user <{user.username}> is judged to be violent.")
+        print("Link (Ctrl+left click): " + link(serveFilePath))
         return (True, videoData.user, serveFilePath)
     
     return (False, None, serveFilePath)
@@ -817,7 +817,7 @@ def analyzeVideoByGemini(filePath:str):
 
 # 문자열을 gtts를 사용하여 사운드로 출력
 def playTTS(prompt :str) :
-    soundObj = gTTS(prompt, lang='ko')
+    soundObj = gTTS(prompt, lang='en')
     # 소리 출력용 가짜 파일 포인터
     b = BytesIO()
     soundObj.write_to_fp(b) #mp3파일 형식임    
@@ -840,8 +840,8 @@ def threadWork(pk:int, filePath:str):
     promptResponse :str = None
     try:
         promptResponse :str = analyzeVideoByGemini(filePath)
-        print(f"유저 <{userName}> (이)가 보낸, 폭력적이라고 판단된 영상의 AI 분석 내용:\n{promptResponse}\n링크(Ctrl+왼쪽클릭) : {link(serveFilePath)}")
+        print(f"AI analysis of a video that <{userName}> has sent judged to be violent. Here is the analysis summary:\n{promptResponse}\nLink (Ctrl+left click): {link(serveFilePath)}")
         playTTS(promptResponse)
     except:
-        print("오류 : Gemini 사용 로직에서 문제 발생!")
+        print("## Error in the Gemini usage logic!!")
         return

@@ -28,7 +28,7 @@ async function login() {
 		alert(responseJson.detail)
 	}
 	else {
-		alert(`로그인 성공. 환영합니다 ${responseJson.username}`);
+		alert(`Login successful. Welcome, ${responseJson.username}!`);
 		location.href = responseJson.is_superuser ? "superuserpage.html" : "normaluserpage.html";
 	}
 }

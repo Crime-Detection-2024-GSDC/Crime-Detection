@@ -162,17 +162,17 @@ async function search(val_index, isSearchBtn) {
 
     indexNumber.innerText = val_index + "/" + totalIndex;
     indexNumber.onclick = async () => {
-        const input_num = prompt("페이지 숫자를 입력하세요 (1 ~ " + totalIndex + ")");
+        const input_num = prompt("Enter page number (1 ~ " + totalIndex + ")");
         if(input_num===undefined) { return; } // 입력 안하고 X키 누르면 그냥 창 닫기
         const numbered_input_num = Number(input_num);
         if(isNaN(numbered_input_num) || (!Number.isInteger(numbered_input_num))) {
             // 정수가 아닌 무언가를 입력했다면
-           alert("정수 형태의 입력만 가능합니다."); 
+            alert("Only integer input is allowed.");
            return;
         }
         if(numbered_input_num < 1 || numbered_input_num > totalIndex) {
             // 범위 초과시
-            alert("입력 가능한 범위를 초과했습니다. (1 ~ " + totalIndex + ")"); 
+            alert("Exceeded allowable range. (1 ~ " + totalIndex + ")"); 
             return;
         }
         await search(numbered_input_num, false);
@@ -182,14 +182,14 @@ async function search(val_index, isSearchBtn) {
         prevBtn.onclick = async () => { await search(val_index-1, false); }
     }
     else {
-        prevBtn.onclick = () => {alert("첫 페이지입니다!")};
+        prevBtn.onclick = () => { alert("This is the first page!"); };
     }
 
     if(val_index < totalIndex) {
         nextBtn.onclick = async () => { await search(val_index+1, false); }
     }
     else {
-        nextBtn.onclick = () => {alert("마지막 페이지입니다!")};
+        nextBtn.onclick = () => { alert("This is the last page!"); };
     }
     indexes.style.display = 'block';
 }

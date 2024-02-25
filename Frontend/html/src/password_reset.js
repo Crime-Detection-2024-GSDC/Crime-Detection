@@ -29,8 +29,8 @@ async function putAllUsersInSelect() {
 // 초기화 버튼 눌렸을 때 실행될 함수
 async function resetPw() {
 	const username = document.querySelector("#userlist").value;
-	// 초기화할건지 묻는 창 띄우가
-	if(confirm(`사용자명 '${username}'의 비밀번호를 초기화하시겠습니까?`) == false) {
+	// 초기화할건지 묻는 창 띄우기
+	if (confirm(`Reset the password for user '${username}'?`) == false) {
 		return;	
 	}
 	const data = { username };
@@ -40,5 +40,5 @@ async function resetPw() {
 		alert(responseJson.detail);
 		return;
 	}
-	alert(`사용자명 '${username}'의 비밀번호가 초기화되었습니다.\n새로운 비밀번호 : ${responseJson.new_password}`)
+	alert(`Password for user '${username}' has been reset.\nNew password: ${responseJson.new_password}`);
 }

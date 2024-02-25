@@ -62,7 +62,7 @@ export async function sendLogoutRequest() {
 		alert(responseJson.detail)
         return;
     }
-	alert(`로그아웃 되었습니다.`);
+	alert("You have been logged out.");
     window.location.href = "login.html";
 }
 

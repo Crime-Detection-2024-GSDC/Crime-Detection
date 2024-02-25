@@ -11,12 +11,12 @@ async function makeUser() {
 	const data = {username : document.querySelector("#username").value}
 	
 	if(!isValidUsername(data.username)) {
-		alert("사용자명은 반드시 3글자 이상 20글자 이하의 영어 대소문자, 숫자, 언더바(_)로만 구성되어야 합니다!");
+		alert("Username must consist of 3 to 20 characters, including English uppercase and lowercase letters, numbers, and underscores(_).");
 		return;
 	}
 
 	// 생성할건지 묻는 창 띄우가
-	if(confirm(`새 사용자'${data.username}'를 생성하시겠습니까?`) == false) {
+	if (confirm(`Create a new user '${data.username}'?`) == false) {
 		return;	
 	}
 
@@ -27,5 +27,5 @@ async function makeUser() {
 		return;
 	}
 
-	alert(`새 사용자 ${responseJson.username}이 생성되었습니다.\n초기 비밀번호 : ${responseJson.password}`)
+	alert(`New user ${responseJson.username} has been created.\nInitial password: ${responseJson.password}`);
 }

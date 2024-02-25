@@ -20,7 +20,7 @@ async function pageMain() {
     videoPK = localStorage.getItem("videoPK");
     // Search사이트에서 넘어온게 아니라면
     if(videoPK===null) {
-        alert("올바르지 못한 접근입니다.");
+        alert("Unauthorized access.");
         return;
     }
     await showVideo(videoPK);
@@ -93,7 +93,7 @@ async function nextBtn() {
 
 async function deleteImage() {
     // 생성할건지 묻는 창 띄우가
-	if(confirm(`영상을 정말로 삭제하시겠습니까?`) == false) {
+	if (confirm(`Do you really want to delete the video?`) == false) {
 		return;	
 	}
     const body = { id : videoPK};
@@ -103,7 +103,7 @@ async function deleteImage() {
 		alert(responseJson.detail);
 		return;
 	}
-    alert("영상이 삭제되었습니다!");
+    alert("The video has been deleted!");
     if(responseJson.nextVideoId != null) {
         showPic(responseJson.nextVideoId);
     }
@@ -111,7 +111,7 @@ async function deleteImage() {
         showPic(responseJson.prevVideoId);
     }
     else {
-        alert("더 이상 남아있는 영상이 없습니다!");
+        alert("There are no more remaining videos!");
     }
 }
 

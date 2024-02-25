@@ -107,7 +107,7 @@ async function getVideo() {
         console.log(e);
         // 백엔드서버 연결 오류 발생시 
         if((++err_count) >= 5) {
-            alert("백엔드 서버와의 연결이 끊겼습니다!");
+          alert("Connection to the backend server has been lost!");
             return;
         }
     }
